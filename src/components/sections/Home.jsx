@@ -2,30 +2,36 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import '../../i18n/config'
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18next';  
+import i18n from 'i18next';
 import { b } from 'framer-motion/client';
 
-const HomeSection = forwardRef(( props, ref) => {
+const HomeSection = forwardRef((props, ref) => {
     const { t } = useTranslation();
 
-    const handleDownloadCV = () => {
+    const handleDownloadCV = async () => {
         const currentLanguage = i18n.language;
-
         const cvFiles = {
-            en: '/cv/CNEN.pdf',  
-            es: '/cv/CNES.pdf'
+            en: '/cv/CNEN.pdf',
+            es: '/cv/CNES.pdf',
         };
-
         const cvPath = cvFiles[currentLanguage] || cvFiles.en;
         const fileName = currentLanguage === 'es' ? 'CV_ES.pdf' : 'CV_EN.pdf';
-        
-        const link = document.createElement('a');
-        link.href = cvPath;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+
+        try {
+            const response = await fetch(cvPath);
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Error al descargar el CV:', error);
+        }
+    };
 
     return (
         <section ref={ref} className="min-h-screen flex items-center justify-center">
