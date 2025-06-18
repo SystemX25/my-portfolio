@@ -7,3 +7,38 @@ body, #root {
   color: white; 
   overflow-x: hidden;
 }
+
+@keyframes glitch {
+  0% { transform: translate(0); opacity: 1; }
+  20% { transform: translate(-2px, 2px); opacity: 0.8; }
+  40% { transform: translate(2px, -2px); opacity: 0.6; }
+  60% { transform: translate(-1px, 1px); opacity: 0.8; }
+  80% { transform: translate(1px, -1px); opacity: 0.6; }
+  100% { transform: translate(0); opacity: 1; }
+}
+
+.animate-glitch-0 {
+  animation: glitch 1.2s infinite;
+}
+.animate-glitch-1 {
+  animation: glitch 1.2s infinite 0.2s;
+}
+.animate-glitch-2 {
+  animation: glitch 1.2s infinite 0.4s;
+}
+
+.glow-text {
+  text-shadow:
+    0 0 5px #7c3aed,
+    0 0 10px #7c3aed,
+    0 0 20px #2563eb,
+    0 0 30px #dc2626;
+}
+
+.hover\\:glow-outline:hover {
+  box-shadow:
+    0 0 5px #7c3aed,
+    0 0 10px #7c3aed,
+    0 0 15px #2563eb;
+  transition: box-shadow 0.3s ease;
+}

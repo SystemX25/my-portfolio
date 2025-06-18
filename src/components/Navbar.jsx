@@ -1,115 +1,92 @@
+import { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useContext, useState } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import EclipseTransition from './EclipseTransition';
+import clsx from 'clsx';
 
-const Navbar = ({ activeSection, setActiveSection }) => {
+const glitchColors = ['text-purple-500', 'text-blue-500', 'text-red-500'];
+const glitchDelays = [0, 0.1, 0.2];
+
+const Navbar = () => {
   const { t, i18n } = useTranslation();
   const { darkMode, toggleTheme } = useContext(ThemeContext);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [showEclipse, setShowEclipse] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [nameAlt, setNameAlt] = useState(false);
 
-  const changeLanguage = (lng) => i18n.changeLanguage(lng);
+  useEffect(() => {
+    const interval = setInterval(() => setNameAlt((prev) => !prev), 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleThemeToggle = () => {
     setShowEclipse(true);
-    toggleTheme(); 
-
+    toggleTheme();
     setTimeout(() => setShowEclipse(false), 1500);
   };
 
-  const navLinks = [
-    { id: 'home', label: t('Home') },
-    { id: 'about', label: t('About') },
-    { id: 'skills', label: t('Skills') },
-    { id: 'projects', label: t('Projects') },
-    { id: 'certifications', label: t('Certifications') },
-    { id: 'contact', label: t('Contact') }
-  ];
+  const changeLanguage = (lng) => i18n.changeLanguage(lng);
 
-  const handleNavClick = (sectionId) => {
-    setActiveSection(sectionId);
-    setMenuOpen(false);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const nameToShow = hovered ? 'SystemX25' : 'Oliver Preciado';
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-dark-cards dark:bg-light-cards shadow-md">
-      <div className="max-w-screen-xl mx-auto px-6 py-3">
-        <div className="flex items-center justify-between">
-          {/* Selector de idioma */}
-          <div className="flex items-center">
-            <select
-              onChange={(e) => changeLanguage(e.target.value)}
-              value={i18n.language}
-              className="bg-transparent border-none text-dark-purple dark:text-light-purple font-medium text-lg focus:outline-none focus:ring-0 cursor-pointer"
-            >
-              <option value="es">ES</option>
-              <option value="en">EN</option>
-            </select>
-          </div>
-
-          {/* Nombre/Título - Centrado */}
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="absolute left-1/2 transform -translate-x-1/2"
+    <header className="fixed w-full top-0 left-0 z-50 bg-[#0f0f1a]/80 backdrop-blur-lg shadow-md">
+      <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between font-['Orbitron']">
+        
+        {/* Selector de idioma futurista */}
+        <div className="relative">
+          <select
+            onChange={(e) => changeLanguage(e.target.value)}
+            value={i18n.language}
+            className="bg-transparent text-purple-400 border border-purple-600 px-3 py-1 rounded-md text-sm appearance-none cursor-pointer hover:glow-outline focus:outline-none"
           >
-            <h1 className="text-2xl font-bold text-dark-purple dark:text-light-purple whitespace-nowrap">
-              Oliver Preciado
-            </h1>
-          </motion.div>
-
-          {/* Controles derecha */}
-          <div className="flex items-center space-x-4">
-            {/* Botón de tema */}
-            <button
-              onClick={handleThemeToggle}
-              aria-label={darkMode ? 'Modo claro' : 'Modo oscuro'}
-              className="p-1 text-xl text-dark-purple dark:text-light-purple hover:opacity-80 transition-opacity"
-            >
-              {darkMode ? '☀️' : '🌙'}
-            </button>
-            <EclipseTransition isVisible={showEclipse} />
-
-            {/* Botón del menú */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-1 text-xl text-dark-purple dark:text-light-purple hover:opacity-80 transition-opacity"
-              aria-expanded={menuOpen}
-            >
-              {menuOpen ? '✕' : '☰'}
-            </button>
-          </div>
+            <option className="bg-[#1f2937] text-white" value="es">🌎 ES</option>
+            <option className="bg-[#1f2937] text-white" value="en">🪐 EN</option>
+          </select>
         </div>
 
-        {/* Menú desplegable */}
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="mt-4 bg-dark-cards dark:bg-light-cards rounded-lg overflow-hidden"
+        {/* Nombre con efecto glitch y transición de nombre */}
+        <motion.div
+          className="relative select-none"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onClick={() => setHovered(!hovered)}
+          whileTap={{ scale: 0.97 }}
+        >
+          {[...Array(3)].map((_, i) => (
+            <motion.h1
+              key={i}
+              className={clsx(
+                'absolute top-0 left-0 text-2xl font-extrabold mix-blend-screen pointer-events-none',
+                glitchColors[i],
+                nameAlt && `animate-glitch-${i}`
+              )}
+              style={{ zIndex: -1, opacity: 0.7 }}
+              initial={{ x: -1 * (i + 1), y: i + 1 }}
+              animate={{ x: 0, y: 0 }}
+              transition={{ delay: glitchDelays[i] }}
             >
-              <div className="py-2 space-y-1">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.id}
-                    onClick={() => handleNavClick(link.id)}
-                    className={`block w-full text-left px-4 py-3 text-lg ${activeSection === link.id
-                      ? 'bg-dark-purple dark:bg-light-purple text-white dark:text-dark-text font-semibold'
-                      : 'text-dark-text dark:text-light-text hover:bg-opacity-10 hover:bg-dark-purple dark:hover:bg-light-purple'
-                      }`}
-                  >
-                    {link.label}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              {nameToShow}
+            </motion.h1>
+          ))}
+          <h1 className="relative text-2xl font-extrabold text-white glow-text">
+            {nameToShow}
+          </h1>
+        </motion.div>
+
+        {/* Botón de modo oscuro/claro */}
+        <div className="flex items-center gap-4">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            onClick={handleThemeToggle}
+            className="text-purple-400 hover:text-purple-300 transition-all text-xl"
+            aria-label={darkMode ? 'Modo claro' : 'Modo oscuro'}
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </motion.button>
+          <EclipseTransition isVisible={showEclipse} isDarkMode={darkMode} />
+        </div>
       </div>
     </header>
   );
