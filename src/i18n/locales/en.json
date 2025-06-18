@@ -1,0 +1,29 @@
+{
+  "common": {
+    "welcome": "Welcome to my portfolio",
+    "downloadCV": "Download CV",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "home": {
+    "title": "Exploring the code universe"
+  },
+  "about": {
+    "title": "About me",
+    "description": "I'm a passionate developer with experience in modern web technologies..."
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "languages": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "tools": "Tools & Platforms"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "send": "Send Message",
+    "success": "Message sent successfully!"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "common": {
+    "welcome": "Bienvenido a mi portafolio",
+    "downloadCV": "Descargar CV",
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contáctame"
+  },
+  "home": {
+    "title": "SystemX25: Fragmentado, estelar, impredecible",
+    "subtitle": "Explorando el universo del código"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador apasionado con experiencia en tecnologías web modernas..."
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "languages": "Lenguajes de Programación",
+    "frameworks": "Frameworks y Librerías",
+    "tools": "Herramientas y Plataformas"
+  },
+  "contact": {
+    "title": "Contacto",
+    "name": "Tu Nombre",
+    "email": "Tu Email",
+    "message": "Tu Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado con éxito!"
+  }
+}

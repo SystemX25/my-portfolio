@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import Navbar from './components/Navbar';
+import HomeSection from './components/sections/Home';
+import AboutSection from './components/sections/About.jsx';
+import SkillsSection from './components/sections/Skills.jsx';
+import ProjectsSection from './components/sections/Projects.jsx';
+import CertificationsSection from './components/sections/Certifications.jsx';
+import ContactSection from './components/sections/Contact.jsx';
+import Starfield from "./components/Starfield";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeProvider>
+      <div className="relative min-h-screen bg-transparent">
+      <Starfield />
+        <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+        <main> 
+          <HomeSection id="home" setActiveSection={setActiveSection} />
+          <AboutSection id="about" setActiveSection={setActiveSection} />
+          <SkillsSection id="skills" setActiveSection={setActiveSection} />
+          <ProjectsSection id="projects" setActiveSection={setActiveSection} />
+          <CertificationsSection id="certifications" setActiveSection={setActiveSection} />
+          <ContactSection id="contact" setActiveSection={setActiveSection} />
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
