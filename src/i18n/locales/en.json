@@ -16,10 +16,18 @@
     "desc4": "I see myself as <blue>curious</blue>, <red>creative</red>, and eager to <purple>break tradition</purple>."
   },
   "skills": {
-    "title": "Technical Skills",
-    "languages": "Programming Languages",
-    "frameworks": "Frameworks & Libraries",
-    "tools": "Tools & Platforms"
+    "title": "Skills",
+    "close": "Close",
+    "level": "Level",
+    "react": "Building user interfaces with React.",
+    "javascript": "Programming language for web development.",
+    "nodejs": "JavaScript runtime environment for servers.",
+    "html": "Markup language to structure web pages.",
+    "css": "Language for styling web pages.",
+    "git": "Version control system and collaboration platform.",
+    "supabase": "Open-source Firebase alternative for databases.",
+    "prisma": "ORM for databases using TypeScript and JavaScript.",
+    "uiux": "Interface and user experience design."
   },
   "contact": {
     "title": "Get in touch",

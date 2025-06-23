@@ -17,10 +17,18 @@
     "desc4": "Me considero <blue>curioso</blue>, <red>creativo</red> y con ganas de <purple>romper lo tradicional</purple>."
   },
   "skills": {
-    "title": "Habilidades Técnicas",
-    "languages": "Lenguajes de Programación",
-    "frameworks": "Frameworks y Librerías",
-    "tools": "Herramientas y Plataformas"
+    "title": "Habilidades",
+    "close": "Cerrar",
+    "level": "Nivel",
+    "react": "Construcción de interfaces de usuario con React.",
+    "javascript": "Lenguaje de programación para desarrollo web.",
+    "nodejs": "Entorno de ejecución para JavaScript en el servidor.",
+    "html": "Lenguaje de marcado para estructurar páginas web.",
+    "css": "Lenguaje para estilizar páginas web.",
+    "git": "Sistema de control de versiones y colaboración.",
+    "supabase": "Alternativa open-source a Firebase para bases de datos.",
+    "prisma": "ORM para bases de datos con TypeScript y JavaScript.",
+    "uiux": "Diseño de interfaces y experiencia de usuario."
   },
   "contact": {
     "title": "Contacto",

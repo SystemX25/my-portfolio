@@ -10,7 +10,6 @@ const AboutSection = forwardRef((props, ref) => {
   const { t } = useTranslation();
   const { darkMode } = useTheme();
 
-  // Colores condicionales
   const textColor = darkMode ? 'text-gray-200' : 'text-gray-800';
   const cardBg = darkMode ? 'bg-[#1f2937]' : 'bg-white';
   const cardText = darkMode ? 'text-gray-300' : 'text-gray-700';
@@ -24,7 +23,6 @@ const AboutSection = forwardRef((props, ref) => {
       </h2>
 
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        {/* Texto traducido */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -51,7 +49,6 @@ const AboutSection = forwardRef((props, ref) => {
           />
         </motion.div>
 
-        {/* Tarjeta giratoria */}
         <div
           className="card-container"
           onMouseEnter={() => setIsHovered(true)}
@@ -62,7 +59,7 @@ const AboutSection = forwardRef((props, ref) => {
             transition={{ type: 'spring', stiffness: 80 }}
             className="card-inner"
           >
-            {/* Cara frontal */}
+
             <div className={`card-face card-front ${cardBg} ${borderFront}`}>
               <FaCode className="text-4xl text-purple-500 mb-2" />
               <p className={`text-xs ${cardText} font-jetbrains-mono`}>
@@ -70,7 +67,6 @@ const AboutSection = forwardRef((props, ref) => {
               </p>
             </div>
 
-            {/* Cara trasera */}
             <div className={`card-face card-back ${cardBg} ${borderBack}`}>
               <FaRobot className="text-4xl text-red-500 mb-2 animate-pulse" />
               <p className={`text-xs text-center ${cardText} font-jetbrains-mono leading-tight`}>
