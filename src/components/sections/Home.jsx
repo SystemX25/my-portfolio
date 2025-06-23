@@ -10,8 +10,8 @@ const HomeSection = forwardRef((props, ref) => {
     const handleDownloadCV = async () => {
         const currentLanguage = i18n.language;
         const cvFiles = {
-            en: '/cv/CNEN.pdf',
-            es: '/cv/CNES.pdf',
+            en: '/cv/CVEN.pdf',
+            es: '/cv/CVES.pdf',
         };
         const cvPath = cvFiles[currentLanguage] || cvFiles.en;
         const fileName = currentLanguage === 'es' ? 'CV_ES.pdf' : 'CV_EN.pdf';
