@@ -10,8 +10,11 @@
     "subtitle": "Explorando el universo del código"
   },
   "about": {
-    "title": "Sobre mí",
-    "description": "Soy un desarrollador apasionado con experiencia en tecnologías web modernas..."
+    "title": "<Sobre mí/>",
+    "desc1": "Soy desarrollador con un gran interés en el desarrollo web, especialmente usando React y Node.js/Next.js.",
+    "desc2": "Estudié la carrera de Tecnólogo en Desarrollo de Software y actualmente curso la Ingeniería en Desarrollo de Software.",
+    "desc3": "Me interesa seguir aprendiendo, <blue>crear más proyectos</blue> y explorar <purple>nuevas tecnologías</purple>.",
+    "desc4": "Me considero <blue>curioso</blue>, <red>creativo</red> y con ganas de <purple>romper lo tradicional</purple>."
   },
   "skills": {
     "title": "Habilidades Técnicas",

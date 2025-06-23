@@ -9,8 +9,11 @@
     "title": "Exploring the code universe"
   },
   "about": {
-    "title": "About me",
-    "description": "I'm a passionate developer with experience in modern web technologies..."
+    "title": "<About Me/>",
+    "desc1": "I’m a developer with a strong interest in web development, especially with React and Node.js/Next.js.",
+    "desc2": "I studied Software Development and I’m currently pursuing a degree in Software Engineering.",
+    "desc3": "I’m always looking to learn, <blue>build new projects</blue>, and explore <purple>new technologies</purple>.",
+    "desc4": "I see myself as <blue>curious</blue>, <red>creative</red>, and eager to <purple>break tradition</purple>."
   },
   "skills": {
     "title": "Technical Skills",

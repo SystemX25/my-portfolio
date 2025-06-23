@@ -17,7 +17,6 @@ const HomeSection = forwardRef((props, ref) => {
         const fileName = currentLanguage === 'es' ? 'CV_ES.pdf' : 'CV_EN.pdf';
         try {
             const response = await fetch(cvPath);
-            console.log(response); // ¿Status 200 o 404?
             if (!response.ok) throw new Error("Failed to fetch PDF");
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
