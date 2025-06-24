@@ -3,6 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
 
+import {
+  SiReact,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiNodedotjs,
+  SiGithub,
+  SiSupabase,
+  SiPrisma,
+  SiFigma,
+} from 'react-icons/si';
+
 const SkillsSection = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const { t } = useTranslation();
@@ -12,63 +24,63 @@ const SkillsSection = () => {
     {
       name: 'React',
       level: 50,
-      logo: 'react.svg',
+      icon: <SiReact size={40} color="#61DAFB" />,
       descKey: 'skills.react',
       color: '#61DAFB'
     },
     {
       name: 'JavaScript',
       level: 45,
-      logo: 'js-logo.svg',
+      icon: <SiJavascript size={40} color="#F7DF1E" />,
       descKey: 'skills.javascript',
       color: '#F7DF1E'
     },
     {
       name: 'Node.js',
       level: 45,
-      logo: 'nodejs-logo.svg',
+      icon: <SiNodedotjs size={40} color="#339933" />,
       descKey: 'skills.nodejs',
       color: '#339933'
     },
     {
       name: 'HTML',
       level: 50,
-      logo: 'html-logo.svg',
+      icon: <SiHtml5 size={40} color="#E34F26" />,
       descKey: 'skills.html',
       color: '#E34F26'
     },
     {
       name: 'CSS',
       level: 40,
-      logo: 'css-logo.svg',
+      icon: <SiCss3 size={40} color="#1572B6" />,
       descKey: 'skills.css',
       color: '#1572B6'
     },
     {
       name: 'Git/GitHub',
       level: 90,
-      logo: 'github-logo.svg',
+      icon: <SiGithub size={40} color="#181717" />,
       descKey: 'skills.git',
       color: '#181717'
     },
     {
       name: 'Supabase',
       level: 85,
-      logo: 'supabase-logo.svg',
+      icon: <SiSupabase size={40} color="#3ECF8E" />,
       descKey: 'skills.supabase',
       color: '#3ECF8E'
     },
     {
       name: 'Prisma',
       level: 80,
-      logo: 'prisma-logo.svg',
+      icon: <SiPrisma size={40} color="#2D3748" />,
       descKey: 'skills.prisma',
       color: '#2D3748'
     },
     {
       name: 'UI/UX',
       level: 40,
-      logo: 'uiux-logo.svg',
+      icon: <SiFigma size={40} color="#7C3AED" />,
       descKey: 'skills.uiux',
       color: '#7C3AED'
     }
@@ -79,6 +91,10 @@ const SkillsSection = () => {
       <h2 className={`text-3xl font-bold text-center mb-12 font-orbitron ${darkMode ? 'text-purple-400' : 'text-purple-700'}`}>
         {t('skills.title')}
       </h2>
+
+      <p className={`text-center mb-8 text-sm font-space-grotesk ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+        {t('skills.hint') || '¿No sabes qué es alguna? ¡Haz clic para más info!'}
+      </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {skills.map((skill) => (
@@ -95,7 +111,7 @@ const SkillsSection = () => {
             style={{ borderColor: skill.color }}
           >
             <div className="flex flex-col items-center text-center">
-              <img src={skill.logo} alt={skill.name} className="w-12 h-12 mb-3 object-contain" />
+              <div className="mb-3">{skill.icon}</div>
               <h3 className={`font-semibold text-lg font-space-grotesk ${darkMode ? 'text-gray-100' : 'text-gray-800'}`}>
                 {skill.name}
               </h3>
@@ -128,7 +144,7 @@ const SkillsSection = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center mb-4">
-                <img src={selectedSkill.logo} alt={selectedSkill.name} className="w-10 h-10 mr-3" />
+                <div className="mr-3">{selectedSkill.icon}</div>
                 <h3 className="text-xl font-bold font-orbitron">
                   {selectedSkill.name}
                 </h3>
