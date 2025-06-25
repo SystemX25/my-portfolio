@@ -13,7 +13,8 @@
     "desc1": "I’m a developer with a strong interest in web development, especially with React and Node.js/Next.js.",
     "desc2": "I studied Software Development and I’m currently pursuing a degree in Software Engineering.",
     "desc3": "I’m always looking to learn, <blue>build new projects</blue>, and explore <purple>new technologies</purple>.",
-    "desc4": "I see myself as <blue>curious</blue>, <red>creative</red>, and eager to <purple>break tradition</purple>."
+    "desc4": "I see myself as <blue>curious</blue>, <red>creative</red>, and eager to <purple>break tradition</purple>.",
+    "cardHint": "Click or tap the card to see the other side."
   },
   "skills": {
     "title": "Skills",
@@ -37,5 +38,36 @@
     "message": "Your Message",
     "send": "Send Message",
     "success": "Message sent successfully!"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Click any project to explore its mission.",
+    "cetiMarket": {
+      "title": "CETI Market",
+      "description": "PWA for buying and selling school materials, built with React, Node.js, PostgreSQL, and real-time chat."
+    },
+    "mazamitlaCabins": {
+      "title": "Mazamitla Cabins",
+      "description": "Informative website for cabin rentals in Mazamitla with dynamic filters and WhatsApp booking integration."
+    },
+    "status": {
+      "completed": "Completed",
+      "in-progress": "In Progress",
+      "upcoming": "Upcoming"
+    },
+    "github": "Code",
+    "demo": "Demo"
+  },
+  "technologies": {
+    "react": "React",
+    "tailwind": "Tailwind CSS",
+    "nodejs": "Node.js",
+    "socketio": "Socket.io",
+    "postgresql": "PostgreSQL",
+    "prisma": "Prisma ORM",
+    "googleVision": "Google Cloud Vision API",
+    "paypal": "PayPal API",
+    "pwa": "Progressive Web App",
+    "vercel": "Vercel Hosting"
   }
 }

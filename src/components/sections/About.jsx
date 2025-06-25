@@ -54,6 +54,10 @@ const AboutSection = forwardRef((props, ref) => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
+          <p className={`text-center text-sm mt-2 italic font-space-grotesk ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            {t('about.cardHint') || 'Hover the card to reveal its other side.'}
+          </p>
+
           <motion.div
             animate={{ rotateY: isHovered ? 180 : 0 }}
             transition={{ type: 'spring', stiffness: 80 }}
