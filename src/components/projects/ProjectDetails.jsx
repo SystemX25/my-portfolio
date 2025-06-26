@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa';
 import {
   SiReact,
@@ -37,6 +38,11 @@ const ProjectDetails = () => {
   const { t } = useTranslation();
   const { darkMode } = useTheme();
   const projectRaw = projectsData[id];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
 
   if (!projectRaw) {
     return (
