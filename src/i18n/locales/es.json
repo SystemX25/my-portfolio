@@ -68,6 +68,50 @@
     "googleVision": "Google Cloud Vision API",
     "paypal": "PayPal API",
     "pwa": "Aplicación Web Progresiva",
-    "vercel": "Hosting en Vercel"
+    "vercel": "Hosting en Vercel",
+    "css": "CSS",
+    "supabase": "Supabase"
+  },
+  "projectDetails": {
+    "back": "Volver a proyectos",
+    "details": "Detalles del Proyecto",
+    "github": "Ver Código",
+    "githubUnavailable": "Código no disponible para este proyecto",
+    "demo": "Ver Proyecto",
+    "notHostedNote": "Los proyectos no marcados como completados aún no están hosteados.",
+    "demoUnavailable": "Demo no disponible para este proyecto",
+    "techStack": "Stack Tecnológico",
+    "clickToZoom": "Haz clic para ampliar",
+    "features": {
+      "title": "Funciones Principales"
+    },
+    "type": {
+      "school": "Proyecto escolar",
+      "freelance": "Proyecto freelance"
+    },
+    "cetiMarket": {
+      "longDescription": "CETIMARKET es una aplicación web progresiva desarrollada como proyecto escolar en el CETI Colomos. Facilita la compra, venta y donación de materiales escolares entre estudiantes, promoviendo la economía circular y la reutilización. La plataforma ofrece autenticación segura exclusiva para usuarios del CETI Colomos, búsqueda avanzada de productos, carrito de compras dinámico, integración con PayPal para pagos seguros, y un sistema de calificaciones y comentarios. Además, cuenta con cambio de idioma entre español e inglés, notificaciones en tiempo real para chat, preguntas y transacciones, así como opciones para aumentar o disminuir el tamaño de letra y cambiar los colores de la plataforma para mejorar la accesibilidad a personas con diferentes tipos de daltonismo. Incorpora Google Vision API para moderar y clasificar automáticamente las imágenes subidas, asegurando contenido apropiado para la comunidad, junto con un sistema personalizado que bloquea palabras inapropiadas en la sección de preguntas y el chat. Quiero dar crédito especial a mi compañero Ramiro Escalante, con quien desarrollé este proyecto en conjunto.",
+      "features": {
+        "auth": "Autenticación segura para usuarios del CETI Colomos",
+        "search": "Búsqueda avanzada y filtrado de productos",
+        "cart": "Carrito de compras dinámico",
+        "paypal": "Pagos seguros mediante integración con PayPal",
+        "rating": "Sistema de calificaciones y comentarios",
+        "vision": "Moderación automática de imágenes con Google Vision API",
+        "language": "Cambio de idioma entre español e inglés",
+        "notifications": "Notificaciones en tiempo real para chat, preguntas y transacciones",
+        "accessibility": "Ajustes de tamaño de letra y colores para daltonismo"
+      }
+    },
+     "mazamitlaCabins": {
+      "longDescription": "Página informativa para renta de cabañas en Mazamitla, desarrollada con React, JavaScript y Tailwind CSS. Dirigida a turistas y clientes directos, ofrece detalles claros sobre capacidades, servicios y comodidades de cada cabaña. Cuenta con filtro dinámico por número de personas y botón de WhatsApp para contacto rápido con mensaje automático. El diseño evoca la naturaleza y tranquilidad del entorno boscoso, con paleta de verdes y cafés, y animaciones sutiles para mejorar la experiencia sin perder claridad. La arquitectura usa Prisma con PostgreSQL para gestionar datos, accedidos desde el frontend vía Supabase, y el proyecto está alojado en Vercel para rendimiento y escalabilidad. Se priorizó la seguridad y privacidad, reservando funciones internas para proteger la información. En resumen, es una plataforma sencilla y funcional que facilita a los visitantes encontrar y reservar hospedaje cómodo y en armonía con la naturaleza.",
+      "features": {
+        "calendar": "Filtro dinámico por número de personas",
+        "booking": "Botón personalizado de contacto por WhatsApp con mensaje automático",
+        "management": "Gestión segura de datos con Prisma y PostgreSQL",
+        "search": "Consulta eficiente mediante Supabase",
+        "confirmation": "Despliegue rápido y confiable en Vercel"
+      } 
+    }
   }
 }

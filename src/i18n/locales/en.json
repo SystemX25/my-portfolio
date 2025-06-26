@@ -68,6 +68,50 @@
     "googleVision": "Google Cloud Vision API",
     "paypal": "PayPal API",
     "pwa": "Progressive Web App",
-    "vercel": "Vercel Hosting"
+    "vercel": "Vercel Hosting",
+    "css": "CSS",
+    "supabase": "Supabase"
+  },
+  "projectDetails": {
+    "back": "Back to projects",
+    "details": "Project Details",
+    "github": "View Code",
+    "githubUnavailable": "Code not available for this project",
+    "demo": "View Project",
+    "demoUnavailable": "Demo not available for this project",
+    "notHostedNote": "Projects not marked as completed are not hosted yet.",
+    "techStack": "Technology Stack",
+    "clickToZoom": "Click to zoom",
+    "features": {
+      "title": "Main Features"
+    },
+    "type": {
+      "school": "School Project",
+      "freelance": "Freelance Project"
+    },
+    "cetiMarket": {
+      "longDescription": "CETIMARKET is a progressive web application developed as a school project at CETI Colomos. It facilitates the buying, selling, and donating of school supplies among students, promoting circular economy and reuse. The platform offers secure authentication exclusively for CETI Colomos users, advanced product search, a dynamic shopping cart, secure payments through PayPal integration, and a rating and review system. Additionally, it features language switching between Spanish and English, real-time notifications for chat, questions, and transactions, as well as options to increase or decrease font size and change platform colors to improve accessibility for people with different types of color blindness. It incorporates Google Vision API to automatically moderate and classify uploaded images, ensuring community-appropriate content, along with a custom system that blocks inappropriate words in the questions section and chat. I would like to give special credit to my partner Ramiro Escalante, with whom I jointly developed this project.",
+      "features": {
+        "auth": "Secure authentication for CETI Colomos users only",
+        "search": "Advanced product search and filtering",
+        "cart": "Dynamic shopping cart",
+        "paypal": "Secure payments via PayPal integration",
+        "rating": "Rating and review system",
+        "vision": "Automatic image moderation with Google Vision API",
+        "language": "Language switching between Spanish and English",
+        "notifications": "Real-time notifications for chat, questions, and transactions",
+        "accessibility": "Font size adjustment and color settings for color blindness"
+      }
+    },
+     "mazamitlaCabins": {
+      "longDescription": "Informative website for cabin rentals in Mazamitla, built with React, JavaScript, and Tailwind CSS. Targeted at tourists and direct clients, it provides clear details on cabin capacities, services, and amenities. Features a dynamic filter by number of guests and a customized WhatsApp contact button with an automatic message. The design reflects the natural, peaceful forest environment through a green and brown color palette and subtle animations to enhance user experience without sacrificing clarity. The architecture uses Prisma with PostgreSQL for data management, accessed efficiently via Supabase from the frontend. Hosted on Vercel for fast, reliable deployment and scalability. Security and privacy were prioritized, with certain internal functions reserved to protect business information. In summary, this is a simple yet functional platform that helps visitors easily find and book comfortable lodging in harmony with nature.",
+      "features": {
+        "calendar": "Dynamic filter by number of guests",
+        "booking": "Custom WhatsApp contact button with automatic message",
+        "management": "Secure data management with Prisma and PostgreSQL",
+        "search": "Efficient querying via Supabase",
+        "confirmation": "Fast and reliable deployment on Vercel"
+      }
+    }
   }
 }
