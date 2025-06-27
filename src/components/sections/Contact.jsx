@@ -199,6 +199,19 @@ const ContactSection = () => {
                     {import.meta.env.VITE_CONTACT_EMAIL || 'contact@example.com'}
                   </span>
                 </motion.div>
+
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href="https://github.com/SystemX25/my-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-3 ${textColor} hover:text-purple-500 transition-colors`}
+                >
+                  <div className={`p-3 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'} hover:shadow-lg ${glowEffect}`}>
+                    <FaGithub className="text-2xl" />
+                  </div>
+                  <span className="font-space-grotesk">{t('contact.githubRepo')}</span>
+                </motion.a>
               </div>
             </div>
 

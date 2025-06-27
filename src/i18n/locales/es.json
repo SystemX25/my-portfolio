@@ -51,6 +51,7 @@
     "sending": "Enviando...",
     "success": "¡Mensaje enviado con éxito! Te responderé pronto.",
     "footer": "¿Prefieres contacto directo? Usa cualquiera de los métodos arriba.",
+    "githubRepo": "Repositorio GitHub del portafolio",
     "validation": {
       "required": "Todos los campos son obligatorios",
       "invalid_email": "Por favor ingresa un correo electrónico válido",
