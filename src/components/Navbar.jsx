@@ -4,6 +4,7 @@ import { ThemeContext } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
 import EclipseTransition from './EclipseTransition';
 import clsx from 'clsx';
+import { useDestruction } from '../context/DestructionContext';
 
 const glitchColors = ['text-purple-500', 'text-blue-500', 'text-red-500'];
 const glitchDelays = [0, 0.1, 0.2];
@@ -14,6 +15,7 @@ const Navbar = () => {
   const [showEclipse, setShowEclipse] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [nameAlt, setNameAlt] = useState(false);
+  const { isDestroying, showBlackHole } = useDestruction();
 
   useEffect(() => {
     const interval = setInterval(() => setNameAlt((prev) => !prev), 3000);
@@ -30,12 +32,15 @@ const Navbar = () => {
 
   const nameToShow = hovered ? 'SystemX25' : 'Oliver Preciado';
 
+  if (isDestroying || showBlackHole) {
+    return <></>;
+  }
+
   return (
     <header className="fixed w-full top-0 left-0 z-50 bg-[#0f0f1a]/80 backdrop-blur-lg shadow-md">
       <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between font-['Orbitron']">
-        
-        {/* Selector de idioma futurista */}
-        <div className="relative">
+
+        <div className="flex items-center gap-4">
           <select
             onChange={(e) => changeLanguage(e.target.value)}
             value={i18n.language}
@@ -46,7 +51,6 @@ const Navbar = () => {
           </select>
         </div>
 
-        {/* Nombre con efecto glitch y transición de nombre */}
         <motion.div
           className="relative select-none"
           onMouseEnter={() => setHovered(true)}
@@ -75,7 +79,6 @@ const Navbar = () => {
           </h1>
         </motion.div>
 
-        {/* Botón de modo oscuro/claro */}
         <div className="flex items-center gap-4">
           <motion.button
             whileHover={{ scale: 1.1 }}

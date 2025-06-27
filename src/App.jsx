@@ -5,25 +5,28 @@ import Navbar from './components/Navbar';
 import Portfolio from './pages/Portfolio';
 import Starfield from "./components/Starfield";
 import ProjectDetails from './components/projects/ProjectDetails';
+import { DestructionProvider } from './context/DestructionContext';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <Router>
-      <ThemeProvider>
-        <div className="relative min-h-screen bg-transparent">
-          <Starfield />
-          <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-          <main>
-            <Routes>
-              <Route path="/projects/:id" element={<ProjectDetails />} />
-              <Route path="/" element={<Portfolio setActiveSection={setActiveSection} />} />
-            </Routes>
-          </main>
-        </div>
-      </ThemeProvider>
-    </Router>
+    <DestructionProvider>
+      <Router>
+        <ThemeProvider>
+          <div className="relative min-h-screen bg-transparent">
+            <Starfield />
+            <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+            <main>
+              <Routes>
+                <Route path="/projects/:id" element={<ProjectDetails />} />
+                <Route path="/" element={<Portfolio setActiveSection={setActiveSection} />} />
+              </Routes>
+            </main>
+          </div>
+        </ThemeProvider>
+      </Router>
+    </DestructionProvider>
   );
 }
 

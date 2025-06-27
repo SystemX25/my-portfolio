@@ -1,28 +1,54 @@
 @import 'tailwindcss';
 
-body, #root {
+body,
+#root {
   margin: 0;
   padding: 0;
   background-color: transparent;
-  color: white; 
+  color: white;
   overflow-x: hidden;
 }
 
 @keyframes glitch {
-  0% { transform: translate(0); opacity: 1; }
-  20% { transform: translate(-2px, 2px); opacity: 0.8; }
-  40% { transform: translate(2px, -2px); opacity: 0.6; }
-  60% { transform: translate(-1px, 1px); opacity: 0.8; }
-  80% { transform: translate(1px, -1px); opacity: 0.6; }
-  100% { transform: translate(0); opacity: 1; }
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+  }
+
+  40% {
+    transform: translate(2px, -2px);
+    opacity: 0.6;
+  }
+
+  60% {
+    transform: translate(-1px, 1px);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: translate(1px, -1px);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
 }
 
 .animate-glitch-0 {
   animation: glitch 1.2s infinite;
 }
+
 .animate-glitch-1 {
   animation: glitch 1.2s infinite 0.2s;
 }
+
 .animate-glitch-2 {
   animation: glitch 1.2s infinite 0.4s;
 }
@@ -41,4 +67,83 @@ body, #root {
     0 0 10px #7c3aed,
     0 0 15px #2563eb;
   transition: box-shadow 0.3s ease;
+}
+
+@keyframes earthquake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.earthquake-effect {
+  animation: earthquake 0.5s linear infinite;
+}
+
+@keyframes crackAppear {
+  0% {
+    transform: scale(0) rotate(var(--angle));
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) rotate(var(--angle));
+    opacity: var(--opacity);
+  }
+}
+
+@keyframes crackPulse {
+
+  0%,
+  100% {
+    opacity: var(--opacity);
+  }
+
+  50% {
+    opacity: calc(var(--opacity) * 0.5);
+  }
+}
+
+@keyframes fallDebris {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sectionCollapse {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(500px) rotate(45deg) scale(0.8);
+    opacity: 0;
+  }
 }

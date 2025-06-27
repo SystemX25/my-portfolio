@@ -3,7 +3,16 @@
     "welcome": "Bienvenido a mi portafolio",
     "downloadCV": "Descargar CV",
     "viewProjects": "Ver Proyectos",
-    "contactMe": "Contáctame"
+    "contactMe": "Contáctame",
+    "destroy_button": "Destruir página",
+    "warning_title": "¡Advertencia!",
+    "warning_message": "Esta función ejecutará una simulación 3D que podría no ser compatible con todos los dispositivos debido a requisitos gráficos.",
+    "cancel": "Cancelar",
+    "continue": "Continuar"
+  },
+  "blackHole": {
+    "interactionMessage": "Puedes interactuar con el agujero negro",
+    "restoreButton": "Restaurar página"
   },
   "home": {
     "title": "Explorando el universo del código"

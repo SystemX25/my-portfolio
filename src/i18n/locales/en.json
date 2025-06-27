@@ -3,7 +3,16 @@
     "welcome": "Welcome to my portfolio",
     "downloadCV": "Download CV",
     "viewProjects": "View Projects",
-    "contactMe": "Contact Me"
+    "contactMe": "Contact Me",
+    "destroy_button": "Destroy Page",
+    "warning_title": "Warning!",
+    "warning_message": "This feature will run a 3D simulation that may not be supported by all devices due to graphics requirements.",
+    "cancel": "Cancel",
+    "continue": "Continue"
+  },
+  "blackHole": {
+    "interactionMessage": "You can interact with the black hole",
+    "restoreButton": "Restore Page"
   },
   "home": {
     "title": "Exploring the code universe"
