@@ -32,12 +32,25 @@
     "uiux": "UI/UX means how a site looks (UI: user interface) and how it feels to use (UX: user experience). This portfolio was designed to be easy to navigate, readable, and visually pleasant for all visitors."
   },
   "contact": {
-    "title": "Get in touch",
+    "title": "Get in Touch",
+    "connect": "Connect With Me",
     "name": "Your Name",
     "email": "Your Email",
     "message": "Your Message",
     "send": "Send Message",
-    "success": "Message sent successfully!"
+    "sent": "Message Sent!",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "footer": "Prefer direct contact? Use any of the methods above.",
+    "validation": {
+      "required": "All fields are required",
+      "invalid_email": "Please enter a valid email address",
+      "short_message": "Message should be at least 10 characters long"
+    },
+    "error": {
+      "general": "Failed to send message. Please try again later.",
+      "configuration": "Form configuration error"
+    }
   },
   "projects": {
     "title": "Projects",
@@ -103,7 +116,7 @@
         "accessibility": "Font size adjustment and color settings for color blindness"
       }
     },
-     "mazamitlaCabins": {
+    "mazamitlaCabins": {
       "longDescription": "Informative website for cabin rentals in Mazamitla, built with React, JavaScript, and Tailwind CSS. Targeted at tourists and direct clients, it provides clear details on cabin capacities, services, and amenities. Features a dynamic filter by number of guests and a customized WhatsApp contact button with an automatic message. The design reflects the natural, peaceful forest environment through a green and brown color palette and subtle animations to enhance user experience without sacrificing clarity. The architecture uses Prisma with PostgreSQL for data management, accessed efficiently via Supabase from the frontend. Hosted on Vercel for fast, reliable deployment and scalability. Security and privacy were prioritized, with certain internal functions reserved to protect business information. In summary, this is a simple yet functional platform that helps visitors easily find and book comfortable lodging in harmony with nature.",
       "features": {
         "calendar": "Dynamic filter by number of guests",

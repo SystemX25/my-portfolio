@@ -32,12 +32,25 @@
     "uiux": "UI/UX significa cómo se ve un sitio (UI: interfaz de usuario) y cómo se siente al usarlo (UX: experiencia de usuario). Este portafolio fue diseñado para ser fácil de navegar, legible y visualmente agradable para todos los visitantes."
   },
   "contact": {
-    "title": "Ponte en contacto",
+    "title": "Contáctame",
+    "connect": "Conéctate Conmigo",
     "name": "Tu Nombre",
-    "email": "Tu Correo",
+    "email": "Tu Correo Electrónico",
     "message": "Tu Mensaje",
     "send": "Enviar Mensaje",
-    "success": "¡Mensaje enviado con éxito!"
+    "sent": "¡Mensaje Enviado!",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito! Te responderé pronto.",
+    "footer": "¿Prefieres contacto directo? Usa cualquiera de los métodos arriba.",
+    "validation": {
+      "required": "Todos los campos son obligatorios",
+      "invalid_email": "Por favor ingresa un correo electrónico válido",
+      "short_message": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "error": {
+      "general": "Error al enviar el mensaje. Por favor inténtalo más tarde.",
+      "configuration": "Error de configuración del formulario"
+    }
   },
   "projects": {
     "title": "Proyectos",
@@ -103,7 +116,7 @@
         "accessibility": "Ajustes de tamaño de letra y colores para daltonismo"
       }
     },
-     "mazamitlaCabins": {
+    "mazamitlaCabins": {
       "longDescription": "Página informativa para renta de cabañas en Mazamitla, desarrollada con React, JavaScript y Tailwind CSS. Dirigida a turistas y clientes directos, ofrece detalles claros sobre capacidades, servicios y comodidades de cada cabaña. Cuenta con filtro dinámico por número de personas y botón de WhatsApp para contacto rápido con mensaje automático. El diseño evoca la naturaleza y tranquilidad del entorno boscoso, con paleta de verdes y cafés, y animaciones sutiles para mejorar la experiencia sin perder claridad. La arquitectura usa Prisma con PostgreSQL para gestionar datos, accedidos desde el frontend vía Supabase, y el proyecto está alojado en Vercel para rendimiento y escalabilidad. Se priorizó la seguridad y privacidad, reservando funciones internas para proteger la información. En resumen, es una plataforma sencilla y funcional que facilita a los visitantes encontrar y reservar hospedaje cómodo y en armonía con la naturaleza.",
       "features": {
         "calendar": "Filtro dinámico por número de personas",
@@ -111,7 +124,7 @@
         "management": "Gestión segura de datos con Prisma y PostgreSQL",
         "search": "Consulta eficiente mediante Supabase",
         "confirmation": "Despliegue rápido y confiable en Vercel"
-      } 
+      }
     }
   }
 }
