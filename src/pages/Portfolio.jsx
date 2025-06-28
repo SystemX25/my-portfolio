@@ -10,6 +10,7 @@ import DestroyScene from '../components/Destruction/DestroyScene';
 import BlackHoleScene from '../components/Destruction/BlackHoleScene';
 import { useTheme } from '../context/ThemeContext';
 import { useDestruction } from '../context/DestructionContext';
+import Navbar from '../components/Navbar'; // importa el Navbar modificado
 
 const Portfolio = ({ setActiveSection }, ref) => {
   const { t } = useTranslation();
@@ -27,6 +28,9 @@ const Portfolio = ({ setActiveSection }, ref) => {
   const warningRef = useRef(null);
   const [destructionPhase, setDestructionPhase] = useState(0);
   const containerRef = useRef(null);
+
+  // Estado para mostrar mensaje de cambio de idioma
+  const [languageMessage, setLanguageMessage] = useState(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -126,8 +130,20 @@ const Portfolio = ({ setActiveSection }, ref) => {
     setShowWarning(false);
   };
 
+  // Función que pasaremos al Navbar para avisar cambio de idioma
+  const handleLanguageChange = (lng) => {
+    // Mostrar mensaje en idioma actual
+    setLanguageMessage(
+      lng === 'es' ? 'Idioma cambiado a Español' : 'Language switched to English'
+    );
+    setTimeout(() => setLanguageMessage(null), 2000);
+  };
+
   return (
     <>
+      {/* Navbar con callback */}
+      <Navbar onLanguageChange={handleLanguageChange} />
+
       {!isDestroying && !showBlackHole && (
         <div
           ref={containerRef}
@@ -220,6 +236,18 @@ const Portfolio = ({ setActiveSection }, ref) => {
       )}
 
       {showBlackHole && <BlackHoleScene />}
+
+      {/* Mensaje temporal en esquina inferior derecha */}
+      {languageMessage && (
+        <div
+          className={`fixed bottom-6 right-6 z-[9999] px-4 py-2 rounded shadow-lg font-semibold text-white
+            ${darkMode ? 'bg-purple-700' : 'bg-purple-500'} select-none`}
+          role="alert"
+          aria-live="polite"
+        >
+          {languageMessage}
+        </div>
+      )}
     </>
   );
 };

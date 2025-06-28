@@ -9,7 +9,7 @@ import { useDestruction } from '../context/DestructionContext';
 const glitchColors = ['text-purple-500', 'text-blue-500', 'text-red-500'];
 const glitchDelays = [0, 0.1, 0.2];
 
-const Navbar = () => {
+const Navbar = ({ onLanguageChange }) => {
   const { t, i18n } = useTranslation();
   const { darkMode, toggleTheme } = useContext(ThemeContext);
   const [showEclipse, setShowEclipse] = useState(false);
@@ -28,7 +28,12 @@ const Navbar = () => {
     setTimeout(() => setShowEclipse(false), 1500);
   };
 
-  const changeLanguage = (lng) => i18n.changeLanguage(lng);
+  const changeLanguage = (lng) => {
+    if (lng !== i18n.language) {
+      i18n.changeLanguage(lng);
+      if (onLanguageChange) onLanguageChange(lng);
+    }
+  };
 
   const nameToShow = hovered ? 'SystemX25' : 'Oliver Preciado';
 
@@ -40,14 +45,17 @@ const Navbar = () => {
     <header className="fixed w-full top-0 left-0 z-50 bg-[#0f0f1a]/80 backdrop-blur-lg shadow-md">
       <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between font-['Orbitron']">
 
-        <div className="flex items-center gap-4">
+        {/* Lenguaje con label más visible */}
+        <div className="flex items-center gap-2">
           <select
+            id="language-select"
             onChange={(e) => changeLanguage(e.target.value)}
             value={i18n.language}
-            className="bg-transparent text-purple-400 border border-purple-600 px-3 py-1 rounded-md text-sm appearance-none cursor-pointer hover:glow-outline focus:outline-none"
+            className="bg-transparent text-purple-400 border border-purple-600 px-3 py-1 rounded-md text-sm appearance-none cursor-pointer hover:glow-outline focus:outline-none transition"
+            aria-label="Cambiar idioma"
           >
-            <option className="bg-[#1f2937] text-white" value="es">🌎 ES</option>
-            <option className="bg-[#1f2937] text-white" value="en">🪐 EN</option>
+            <option className="bg-[#1f2937] text-white" value="es">🌎 Español</option>
+            <option className="bg-[#1f2937] text-white" value="en">🪐 English</option>
           </select>
         </div>
 
